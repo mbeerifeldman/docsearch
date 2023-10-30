@@ -46,7 +46,8 @@ class Handler implements URLHandler {
                List<String> foundPaths = new ArrayList<>();
                for(File f: paths) {
                    if(FileHelpers.readFile(f).contains(parameters[1])) {
-                       foundPaths.add(f.toString());
+                       foundPaths.add(f.toString().replace("\\", "/"));
+
                    }
                }
                Collections.sort(foundPaths);
